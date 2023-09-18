@@ -16,7 +16,7 @@ try:
         #Google homepage = q
         EC.presence_of_element_located((By.NAME, "q"))
     )
-    element.send_keys("javatpoint")
+    element.send_keys("discord.gg")
     element.send_keys(Keys.ENTER)
 finally:
     time.sleep(4)
