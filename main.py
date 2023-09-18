@@ -24,7 +24,6 @@ try:
         EC.presence_of_element_located((By.NAME, "password"))
     )
     password_elem.send_keys("Baseballrocks1!")
-    time.sleep(100)
 
     driver.find_element(By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div/div/div/form/div[2]/div/div[1]/div[2]/button[2]').click()
     
