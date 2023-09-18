@@ -22,6 +22,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+import time
 
 driver = webdriver.Chrome()
 driver.maximize_window()
@@ -34,4 +35,5 @@ try:
     element.send_keys("javatpoint")
     element.send_keys(Keys.ENTER)
 finally:
+    time.sleep(4)
     driver.quit()
