@@ -31,5 +31,5 @@ except Exception as e:
     print("An error occurred:", str(e))
 
 finally:
-    time.sleep(10)
+    time.sleep(50)
     driver.quit()
