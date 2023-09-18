@@ -41,7 +41,11 @@ try:
         EC.presence_of_element_located((By.NAME, "password"))
     )
     password_elem.send_keys("Baseballrocks1!")
-    login_elem
+
+    login_elem = WebDriverWait(driver, 20).until(
+        EC.presence_of_element_located((By.XPATH, "//button[text()='Log In']"))
+    )
+    login_elem.click()
     
 except:
     print("Couldn't locate the element")
