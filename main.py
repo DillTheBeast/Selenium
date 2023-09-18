@@ -1,20 +1,3 @@
-# from selenium import webdriver
-# from selenium.webdriver.common.keys import Keys
-# import time
-
-# site = 'https://discord.com/'
-
-# driver = webdriver.Chrome()
-# driver.get(site)
-# time.sleep(3)
-
-# # Locate element by visible text
-# toBrowser = driver.find_element(by=webdriver.common.by.By.XPATH, value="//*[text()='Open Discord in your browser']")
-# time.sleep(5)
-# elem = driver.find_element(by=webdriver.common.by.By.XPATH, value="//*[text()='Login']")
-# elem.send_keys("Brazil")
-# elem.send_keys(Keys.ENTER)
-# time.sleep(10)
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -41,10 +24,9 @@ try:
         EC.presence_of_element_located((By.NAME, "password"))
     )
     password_elem.send_keys("Baseballrocks1!")
+    time.sleep(100)
 
-    button_elem = driver.find_element(By.NAME, "Log In")
-
-    button_elem.click()
+    driver.find_element(By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div/div/div/form/div[2]/div/div[1]/div[2]/button[2]').click()
     
 except Exception as e:
     print("An error occurred:", str(e))
