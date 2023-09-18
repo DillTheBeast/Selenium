@@ -22,22 +22,26 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-site = 'https://discord.com/'
+site = 'https://discord.com/login'
 
 driver = webdriver.Chrome() # specify the path if needed
 driver.get(site)
 
 # Wait until the specific element is present
 try:
-    toBrowser = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "//*[text()='Open Discord in your browser']"))
+    time.sleep(2)
+    # Assuming you want to input the email
+    email_elem = WebDriverWait(driver, 20).until(
+        EC.presence_of_element_located((By.NAME, "email"))
     )
-    toBrowser.click() # If you want to click the button
+    email_elem.send_keys("dillonmaltese@gmail.com")
 
-    elem = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "//*[text()='Login']"))
+    # Assuming you want to input the password next (replace 'your_password' with the actual password or another placeholder)
+    password_elem = WebDriverWait(driver, 20).until(
+        EC.presence_of_element_located((By.NAME, "password"))
     )
-    elem.click() # If you want to click the button
+    password_elem.send_keys("Baseballrocks1!")
+    login_elem
     
 except:
     print("Couldn't locate the element")
