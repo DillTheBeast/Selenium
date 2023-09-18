@@ -28,6 +28,11 @@ try:
     driver.find_element(By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div/div/div/form/div[2]/div/div[1]/div[2]/button[2]').click()
     time.sleep(7)
     driver.find_element(By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div[2]/div/div/div/div[2]/div[1]/nav/div[2]/ul/li[3]/div/a').click()
+
+    chat_elem = WebDriverWait(driver, 20).until(
+        EC.presence_of_element_located((By.NAME, "Text"))
+    )
+    
     
 except Exception as e:
     print("An error occurred:", str(e))
