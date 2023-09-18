@@ -42,13 +42,12 @@ try:
     )
     password_elem.send_keys("Baseballrocks1!")
 
-    login_elem = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.XPATH, "//button[text()='Log In']"))
-    )
-    login_elem.click()
+    button_elem = driver.find_element(By.NAME, "Log In")
+
+    button_elem.click()
     
-except:
-    print("Couldn't locate the element")
+except Exception as e:
+    print("An error occurred:", str(e))
 
 finally:
     time.sleep(10)
