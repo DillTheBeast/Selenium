@@ -26,8 +26,8 @@ try:
     password_elem.send_keys("Baseballrocks1!")
 
     driver.find_element(By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div/div/div/form/div[2]/div/div[1]/div[2]/button[2]').click()
-
-    driver.find_element(By.XPATH, )
+    time.sleep(2)
+    driver.find_element(By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div[2]/div/div/div/div[2]/div/nav/div[2]/ul/li[5]/div/a').click()
     
 except Exception as e:
     print("An error occurred:", str(e))
