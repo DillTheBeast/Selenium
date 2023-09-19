@@ -12,7 +12,7 @@ driver.get(site)
 
 # Wait until the specific element is present
 try:
-    time.sleep(2)
+    time.sleep(1)
     # Assuming you want to input the email
     email_elem = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.NAME, "email"))
@@ -26,9 +26,9 @@ try:
     password_elem.send_keys("Baseballrocks1!")
 
     driver.find_element(By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div/div/div/form/div[2]/div/div[1]/div[2]/button[2]').click()
-    time.sleep(7)
+    time.sleep(1)
     driver.find_element(By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div[2]/div/div/div/div[2]/div[1]/nav/div[2]/ul/li[3]/div/a').click()
-
+    time.sleep(1)
     chat_elem = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="app-mount"]/div[2]/div[1]/div[1]/div/div[2]/div/div/div/div[2]/div[2]/div[2]/main/form/div/div[1]/div/div[3]/div/div[2]/div'))
     )
