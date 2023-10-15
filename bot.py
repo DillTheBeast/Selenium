@@ -1,35 +1,3 @@
-# import os
-# import time
-# from selenium import webdriver
-
-# # Set the path to the ChromeDriver executable in the PATH environment variable
-# chrome_driver_path = "/Users/dillonmaltese/Documents/GitHub/Selenium/chromedriver_mac64"
-# os.environ["PATH"] += os.pathsep + os.path.dirname(chrome_driver_path)
-
-# # Initialize the Chrome WebDriver
-# driver = webdriver.Chrome()
-
-# # Navigate to the Discord website
-# driver.get("https://kingschoolct.myschoolapp.com/app/student#studentmyday/assignment-center")
-
-# # Wait for a few seconds (you can adjust the duration as needed)
-# time.sleep(5)
-
-# # Find the text box element by its ID attribute (replace 'label-Username' with the actual ID value)
-# text_box = driver.find_element("id", "label-Username")
-
-# # Input text into the text box
-# text_box.send_keys("Hello, Discord!")
-
-# # Optionally, you can also simulate pressing the Enter key to submit the text (if applicable)
-# # text_box.send_keys(Keys.ENTER)
-
-# # Wait for a few seconds to see the result
-# time.sleep(5)
-
-# # Close the WebDriver when done
-# driver.quit()
-
 import os
 import time
 import pyautogui
@@ -81,7 +49,18 @@ try:
     pyautogui.typewrite("\n")
     
     # Wait for a few seconds to see the result
-    time.sleep(50)
+    time.sleep(5)
+    
+    table = driver.find_element_by_css_selector(".fc-content-skeleton")
+
+    # Find all the rows (tr elements) within the table
+    rows = table.find_elements_by_tag_name("tr")
+
+    # Get the length of the table (number of rows)
+    table_length = len(rows)
+
+    # Print the length of the table
+    print("Table length:", table_length)
 except Exception as e:
     print(f"An error occurred: {e}")
 
