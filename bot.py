@@ -49,9 +49,9 @@ try:
     pyautogui.typewrite("\n")
     
     # Wait for a few seconds to see the result
-    time.sleep(9)
+    time.sleep(900)
 
-    table = driver.find_element_by_xpath("//table[@class='fc-content-skeleton']")
+    table = driver.find_element(By.XPATH, "//table[@class='fc-content-skeleton']")
 
     # Find all the rows (tr elements) within the table
     rows = table.find_elements_by_tag_name("tr")
