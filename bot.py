@@ -50,6 +50,10 @@ try:
     pyautogui.typewrite("Baseballrocks1!")
     pyautogui.typewrite("\n")
     
+    time.sleep(4)
+    
+    driver.maximize_window()
+    
     # Wait for a few seconds to see the result
     time.sleep(900)
 
