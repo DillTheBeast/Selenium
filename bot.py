@@ -14,9 +14,6 @@ os.environ["PATH"] += os.pathsep + os.path.dirname(chrome_driver_path)
 # Initialize the Chrome WebDriver
 driver = webdriver.Chrome()
 
-#Fullscreen the window
-driver.maximize_window()
-
 # Navigate to the Discord website
 driver.get("https://kingschoolct.myschoolapp.com/app/student#studentmyday/assignment-center")
 
@@ -27,21 +24,23 @@ try:
     # Find the text box element by its ID attribute (replace 'label-Username' with the actual ID value)
     element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "Username")))
     
+    time.sleep(5)
+    
     # Input text into the text box
     element.send_keys("dillon.maltese@students.kingschoolct.org")
 
-    time.sleep(2)
+    time.sleep(7)
 
     # Find and click the "Login" button (replace 'login_button_id' with the actual ID value)
     login_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "nextBtn")))
     login_button.click()
 
-    time.sleep(5)
+    time.sleep(7)
 
     button = driver.find_element(By.CSS_SELECTOR, 'button[aria-labelledby="googleButtonLabel"]')
     button.click()
 
-    time.sleep(5)
+    time.sleep(7)
 #googleButtonLabel
 
     # After clicking the button, you can simulate pressing the Enter key on the keyboard
