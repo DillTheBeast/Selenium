@@ -51,16 +51,16 @@ try:
     # Wait for a few seconds to see the result
     time.sleep(900)
 
-    table = driver.find_element(By.XPATH, "//table[@class='fc-content-skeleton']")
+    #table = driver.find_element(By.XPATH, "//table[@class='fc-content-skeleton']")
 
     # Find all the rows (tr elements) within the table
-    rows = table.find_elements_by_tag_name("tr")
+    #rows = table.find_elements_by_tag_name("tr")
 
     # Get the length of the table (number of rows)
-    table_length = len(rows)
+    #table_length = len(rows)
 
     # Print the length of the table
-    print("Table length:", table_length)
+#     print("Table length:", table_length)
 except Exception as e:
     print(f"An error occurred: {e}")
 
