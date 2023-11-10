@@ -14,6 +14,9 @@ os.environ["PATH"] += os.pathsep + os.path.dirname(chrome_driver_path)
 # Initialize the Chrome WebDriver
 driver = webdriver.Chrome()
 
+#Fullscreen the window
+driver.maximize_window()
+
 # Navigate to the Discord website
 driver.get("https://kingschoolct.myschoolapp.com/app/student#studentmyday/assignment-center")
 
