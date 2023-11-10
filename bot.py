@@ -54,6 +54,10 @@ try:
     
     driver.maximize_window()
     
+    time.sleep(2)
+    
+    pyautogui.scroll(3)  # Scroll down by 1 click
+    
     # Wait for a few seconds to see the result
     time.sleep(900)
 
